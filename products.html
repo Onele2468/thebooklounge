@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Collection | The Book Lounge</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://kit.fontawesome.com/ac35ccda32.js" crossorigin="anonymous"></script>
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .book-card {
+            text-align: center;
+        }
+
+        .book-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .book-author {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">THE BOOK LOUNGE</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Books</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="cart-icon-wrapper">
+                        <a href="cart.html">Cart</a>
+                        <span class="cart-count">0</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" style="padding-top: 160px;">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px;">
+                    <div>
+                        <h1 class="reveal">Our Collection</h1>
+                        <p class="reveal" style="color: var(--text-light);">Browse our carefully curated selection of
+                            local and international titles.</p>
+                    </div>
+                    <div class="reveal">
+                        <select
+                            style="padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; font-family: var(--font-body);">
+                            <option>All Categories</option>
+                            <option>Local Fiction</option>
+                            <option>International Fiction</option>
+                            <option>Non-Fiction</option>
+                            <option>Kids & Teens</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <div class="product-grid">
+                    <!-- Placeholder Book Cards -->
+
+                    <!-- Book 1 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p1','images/end-and-beginning.jpg', 'End and beginning', 'Athol Williams', 200.00, 'The lone palm shakes its dangling locks to brush off marauding gales. It tilts then straightens, a Sisyphus of grit. But the onslaught persists for years as in tent rips through the flesh of leaves, snaps the bones of branches. ', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/end-and-beginning.jpg" alt="end-and-beginning">
+                            </div>
+                        </div>
+                        <h3 class="book-title">End and beginning</h3>
+                        <p class="book-author">Athol Williams</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R200.00</p>
+                        <button class="btn" onclick="addToCart('p1', 'End and beginning', 'Athol Williams', 200.00, 'images/end-and-beginning.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 2 -->
+                    <div class="book-card reveal out-of-stock">
+                        <div class="book-image-container"
+                            onclick="openPreview('p2','images/african-hist.jpg', 'An African History of Africa', 'Zeinab Badawi', 180, 'For too long, Africa’s history has been dominated by western narratives of slavery and colonialism, or simply ignored. Now, Zeinab Badawi sets the record straight.', true)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/african-hist.jpg" alt="African hist"></div>
+                        </div>
+                        <h3 class="book-title">An African History of Africa</h3>
+                        <p class="book-author">Zeinab Badawi</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R295.00</p>
+                        <button class="btn" disabled style="padding: 8px 16px; font-size: 0.85rem;">Out of
+                            Stock</button>
+                    </div>
+
+                    <!-- Book 3 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p3', 'images/benni.jpg', 'Benni', 'Benni McCarthy, Mark Gleeson', 360, 'Benni McCarthy is South Africa’s most successful footballer – he’s the all-time top scorer for Bafana Bafana, the country’s only UEFA Champions League winner, and he is now forging a successful career as a coach.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/benni.jpg" alt="benni "></div>
+                        </div>
+                        <h3 class="book-title">Benni</h3>
+                        <p class="book-author">Benni McCarthy, Mark Gleeson</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R360.00</p>
+                        <button class="btn" onclick="addToCart('p3', 'Benni', 'Benni McCarthy, Mark Gleeson', 360, 'images/benni.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 4 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p4','images/bloke-of-all-ages.jpg', 'Bloke of All Ages', 'Siphiwo Mahala, Siyabonga Njica', 420, 'Bloke of All Ages is an expansive reflection that offers refreshing new insights into the works of one of South Africa’s most important literary, intellectual and artistic figures, William Bloke Modisane.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/bloke-of-all-ages.jpg" alt="bloke of all ages">
+                            </div>
+                        </div>
+                        <h3 class="book-title">Bloke of All Ages</h3>
+                        <p class="book-author">Siphiwo Mahala, Siyabonga Njica</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R420.00</p>
+                        <button class="btn"
+                            onclick="addToCart('p4', 'Bloke of All Ages', 'Siphiwo Mahala, Siyabonga Njica', 420, 'images/bloke-of-all-ages.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 5 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p5','images/6H00.jpg', '6H00 Somewhere', 'Barbara Adair', 230, 'A road trip to Namibia unfolds across these pages, but when? Yesterday, years ago, or never at all? Barbara Adair refuses to say, creating something between memoir and fever dream. ', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/6H00.jpg" alt="6H00"></div>
+                        </div>
+                        <h3 class="book-title">6H00 Somewhere, and Many Hours Later Somewhere Else</h3>
+                        <p class="book-author">Barbara Adair</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R230.00</p>
+                        <button class="btn"
+                            onclick="addToCart('p5', '6H00 Somewhere, and Many Hours Later Somewhere Else', 'Barbara Adair', 230, 'images/6H00.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 6 -->
+                    <div class="book-card reveal out-of-stock">
+                        <div class="book-image-container"
+                            onclick="openPreview('p6','images/navigating-Africas-climate.jpg', 'Navigating Africa’s Climate ', 'Saliem Fakir', 150, 'Africa is highly vulnerable to extreme climate variability and lacks investments in new technologies and infrastructure that meet both development needs and climate objectives. ', true)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/navigating-Africas-climate.jpg"
+                                    alt="navigating Africas climate"></div>
+                        </div>
+                        <h3 class="book-title">Navigating Africa’s Climate Development Nexus</h3>
+                        <p class="book-author">Saliem Fakir</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R300.00</p>
+                        <button class="btn" disabled style="padding: 8px 16px; font-size: 0.85rem;">Out of
+                            Stock</button>
+                    </div>
+
+                    <!-- Book 7 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p7','images/daughters-of-the-bamboo.jpg', 'Daughters of the Bamboo', 'Various Artists', 210, 'A beautiful exploration of traditional arts and the stories behind them.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/daughters-of-the-bamboo.jpg"
+                                    alt="daughters of the bamboo"></div>
+                        </div>
+                        <h3 class="book-title">Daughters of the Bamboo</h3>
+                        <p class="book-author">Various Artists</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R210.00</p>
+                        <button class="btn" onclick="addToCart('p7', 'Daughters of the Bamboo', 'Various Artists', 210, 'images/daughters-of-the-bamboo.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 8 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p8','images/reed-dance-stalker.jpg', 'Reed Dance Stalker', 'Various', 195, 'A gripping mystery set against the backdrop of cultural traditions.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/reed-dance-stalker.jpg" alt="reed dance stalker">
+                            </div>
+                        </div>
+                        <h3 class="book-title">Reed Dance Stalker</h3>
+                        <p class="book-author">Various</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R195.00</p>
+                        <button class="btn" onclick="addToCart('p8', 'Reed Dance Stalker', 'Various', 195, 'images/reed-dance-stalker.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 9 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p9','images/dark-side-of-the-earth.jpg', 'Dark Side of the Earth', 'Various', 240, 'Exploring the hidden corners of our planet and the mysteries that lie within.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/dark-side-of-the-earth.jpg"
+                                    alt="dark side of the earth"></div>
+                        </div>
+                        <h3 class="book-title">Dark Side of the Earth</h3>
+                        <p class="book-author">Various</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R240.00</p>
+                        <button class="btn" onclick="addToCart('p9', 'Dark Side of the Earth', 'Various', 240, 'images/dark-side-of-the-earth.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 10 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p10','images/Detransition-Baby-by-Torrey-Peters.jpg', 'Detransition, Baby', 'Torrey Peters', 315, 'Longlisted for the 2021 Women’s Prize February 2021 Book of the Month for Roxane Gay’s Book Club.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/Detransition-Baby-by-Torrey-Peters.jpg"
+                                    alt="Detransition-Baby"></div>
+                        </div>
+                        <h3 class="book-title">Detransition, Baby</h3>
+                        <p class="book-author">Torrey Peters</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R315.00</p>
+                        <button class="btn" onclick="addToCart('p10', 'Detransition, Baby', 'Torrey Peters', 315, 'images/Detransition-Baby-by-Torrey-Peters.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 11 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p11','images/mother-of-books.jpg', 'Mother of Books', 'Various', 500, 'An epic journey through the history of literature and its impact on society.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/mother-of-books.jpg" alt="mother of books"></div>
+                        </div>
+                        <h3 class="book-title">Mother of Books</h3>
+                        <p class="book-author">Various</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R500.00</p>
+                        <button class="btn" onclick="addToCart('p11', 'Mother of Books', 'Various', 500, 'images/mother-of-books.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 12 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p12', 'images/israel-on-the-brink.jpg', 'Israel on the Brink', 'Ilan Pappe', 550, 'Ilan Pappe paves a path out of the Jewish state, rooted in restorative justice and decolonisation, including the return of refugees, the end of illegal settlements, and building bridges with the Arab world.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/israel-on-the-brink.jpg"
+                                    alt="Israel on the Brink"></div>
+                        </div>
+                        <h3 class="book-title">Israel on the Brink</h3>
+                        <p class="book-author">Ilan Pappe</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R550.00</p>
+                        <button class="btn"
+                            onclick="addToCart('p12', 'Israel on the Brink', 'Ilan Pappe', 550, 'images/israel-on-the-brink.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 13 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p13', 'images/cederberg-the-book.jpg', 'Cederberg - The Book', 'Various Authors', 450, 'A stunning tribute to the Cederberg region.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/cederberg-the-book.jpg" alt="cederberg - the book">
+                            </div>
+                        </div>
+                        <h3 class="book-title">Cederberg - The Book</h3>
+                        <p class="book-author">Various Authors</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R450.00</p>
+                        <button class="btn" onclick="addToCart('p13', 'Cederberg - The Book', 'Various Authors', 450, 'images/cederberg-the-book.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 14 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p14', 'images/trevornoah.jpg', 'Born a Crime', 'Trevor Noah', 260, 'The compelling, inspiring, (often comic) coming-of-age story of Trevor Noah, set during the twilight of apartheid and the tumultuous days of freedom that followed.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/trevornoah.jpg" alt="born a crime"></div>
+                        </div>
+                        <h3 class="book-title">Born a Crime</h3>
+                        <p class="book-author">Trevor Noah</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R260.00</p>
+                        <button class="btn" onclick="addToCart('p14', 'Born a Crime', 'Trevor Noah', 260, 'images/trevornoah.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 15 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p15', 'images/my-back-pages.jpg', 'My Back Pages', 'Richard Charkin', 290, 'Richard Charkin’s experience as a publisher is unique among his generation. Over the past half century he has been (at different times) a scientific and medical publisher, a journal publisher, a digital publisher and a general publisher.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/my-back-pages.jpg" alt="my back pages  ">
+                            </div>
+                        </div>
+                        <h3 class="book-title">My Back Pages</h3>
+                        <p class="book-author">Richard Charkin</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R290.00</p>
+                        <button class="btn" onclick="addToCart('p15', 'My Back Pages', 'Richard Charkin', 290, 'images/my-back-pages.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 16 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p16', 'images/heartstopper.jpg', 'Heartstopper Vol 1', 'Alice Oseman', 395, 'Boy meets boy. Boys become friends. Boys fall in love. An LGBTQ+ graphic novel about life, love, and everything that happens in between.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="images/heartstopper.jpg" alt="heartstopper">
+                            </div>
+                        </div>
+                        <h3 class="book-title">Heartstopper Vol 1</h3>
+                        <p class="book-author">Alice Oseman</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R395.00</p>
+                        <button class="btn" onclick="addToCart('p16', 'Heartstopper Vol 1', 'Alice Oseman', 395, 'images/heartstopper.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4><img src="images/Logo.jpg" alt="logo"></h4>
+                    <p>71 Roeland Street<br>Corner of Roeland and Buitenkant<br>Cape Town</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:0214622425">021 462 2425</a></li>
+                        <li><a href="mailto:booklounge@gmail.com">booklounge@gmail.com</a></li>
+                        <li><a href="https://wa.me/27639616154">WhatsApp: 063 961 6154</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hours</h4>
+                    <p>Mon - Fri: 09h00 - 18h00</p>
+                    <p>Sat: 09h00 - 16h00</p>
+                    <p>Sun: 10h00 - 16h00</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook"
+                            rel="noopener noreferrer"><i class="fab fa-facebook"></i></a> /
+                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram"
+                            rel="noopener noreferrer"><i class="fab fa-instagram"></i></a> /
+                        <a href="https://wa.me/+27711049647?text=Hi There%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20I%20would%20like%20to%20know%20more!"
+                            target="_blank" title="Whatsapp" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a> /
+                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter"
+                            rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 The Book Lounge. All rights reserved. <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
