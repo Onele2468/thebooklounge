@@ -297,6 +297,7 @@ footer {
     color: var(--secondary-color);
     padding: 60px 0 20px;
     margin-top: 60px;
+    margin-bottom: 35px;
 }
 
 .footer-grid {
