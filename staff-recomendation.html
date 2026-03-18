@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Recommendations | The Book Lounge</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://kit.fontawesome.com/ac35ccda32.js" crossorigin="anonymous"></script>
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .book-card {
+            text-align: center;
+        }
+
+        .book-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .book-author {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">THE BOOK LOUNGE</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Books</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="cart-icon-wrapper">
+                        <a href="cart.html">Cart</a>
+                        <span class="cart-count">0</span>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" style="padding-top: 160px;">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px;">
+                    <div>
+                        <h1 class="reveal">Staff Recommendations</h1>
+                        <p class="reveal" style="color: var(--text-light);">Handpicked favorites from the passionate team at Book Lounge.</p>
+                    </div>
+                </div>
+            
+                <div class="product-grid">
+                    <!-- Placeholder Book Cards -->
+
+                    <!-- Book 1 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p1','pictures/cape-fever.jpg', 'Cape Fever', 'Nadia Davids',  360, 'Set in the Cape Colony just after WW1, Cape Fever is a superb depiction of the Cape in the 1920s, particularly of the Quarter and the District.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/cape-fever.jpg" alt="Cape fever">
+                            </div>
+                        </div>
+                        <h3 class="book-title">Cape Fever</h3>
+                        <p class="book-author">Nadia Davids</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R360.00</p>
+                        <button class="btn" onclick="addToCart('p1', 'Cape Fever', 'Nadia Davids', 360.00, 'pictures/cape-fever.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 2 -->
+                    <div class="book-card reveal out-of-stock">
+                        <div class="book-image-container"
+                            onclick="openPreview('p2','pictures/enter-ghost.jpg', 'Enter Ghost', 'Isabella Hammad', 275, 'After years away from her family’s homeland, and reeling from a disastrous love affair, actress Sonia Nasir returns to Haifa to visit her older sister Haneen.', true)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/enter-ghost.jpg" alt="Enter Ghost"></div>
+                        </div>
+                        <h3 class="book-title">Enter Ghost</h3>
+                        <p class="book-author">Isabella Hammad</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R275.00</p>
+                        <button class="btn" disabled style="padding: 8px 16px; font-size: 0.85rem;">Out of
+                            Stock</button>
+                    </div>
+
+                    <!-- Book 3 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p3', 'pictures/long-walk-to-freedom.jpg', 'Long Walk to Freedom', 'Nelson Mandela', 415, 'The riveting memoirs of the outstanding moral and political leader of our time: Nelson Mandela', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/long-walk-to-freedom.jpg" alt="Long Walk to Freedom"></div>
+                        </div>
+                        <h3 class="book-title">Long Walk to Freedom</h3>
+                        <p class="book-author">Nelson Mandela</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R415.00</p>
+                        <button class="btn" onclick="addToCart('p3', 'Long Walk to Freedom', 'Nelson Mandela', 415, 'pictures/long-walk-to-freedom.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 4 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p4','pictures/chasing-hjope.jpg', 'Chasing Hope', 'Nicholas D. Kristof', 455, 'Since 1984, Nicholas Kristof has worked for The New York Times as a reporter, foreign correspondent, bureau chief, and now columnist, becoming one of the foremost reporters of his generation.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/chasing-hjope.jpg" alt="Chasing Hope">
+                            </div>
+                        </div>
+                        <h3 class="book-title">Chasing Hope</h3>
+                        <p class="book-author">Nicholas D. Kristof</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R455.00</p>
+                        <button class="btn"
+                            onclick="addToCart('p4', 'Chasing Hope', 'Nicholas D. Kristof', 455, 'images/bloke-of-all-ages.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 5 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p5','pictures/hunter.jpg', 'The Hunter', 'Tana French', 275, 'It’s a blazing summer when two men arrive in the village. They’re coming for gold. What they bring is trouble.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/hunter.jpg" alt="The Hunter"></div>
+                        </div>
+                        <h3 class="book-title">The Hunter</h3>
+                        <p class="book-author">Tana French</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R275.00</p>
+                        <button class="btn"
+                            onclick="addToCart('p5', 'The Hunter', 'Tana French', 275, 'pictures/hunter.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 6 -->
+                    <div class="book-card reveal out-of-stock">
+                        <div class="book-image-container"
+                            onclick="openPreview('p6','pictures/soft-life.jpg', 'The Soft Life ', 'Lebohang Masango', 310, 'In this book, Lebohang Masango explores how women in South Africa give meaning to aspiration, romance and love in their pursuit of the Soft Life: a life free of hardship.', true)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/soft-life.jpg"
+                                    alt="The Soft Life"></div>
+                        </div>
+                        <h3 class="book-title">The Soft Life</h3>
+                        <p class="book-author">Lebohang Masango</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R310.00</p>
+                        <button class="btn" disabled style="padding: 8px 16px; font-size: 0.85rem;">Out of
+                            Stock</button>
+                    </div>
+
+                    <!-- Book 7 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p7','pictures/becoming-good-at-crises.jpg', 'Becoming Good at Crises', 'Gareth Morgan, Peter Willis', 260, 'With deep experience over two major crises, Peter Willis and Gareth Morgan speak directly to leaders of organisations, encouraging them to make being good at crises a core part of their quest for excellence.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/becoming-good-at-crises.jpg"
+                                    alt="Becoming Good at Crises"></div>
+                        </div>
+                        <h3 class="book-title">Becoming Good at Crises</h3>
+                        <p class="book-author">Gareth Morgan, Peter Willis</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R260.00</p>
+                        <button class="btn" onclick="addToCart('p7', 'Becoming Good at Crises', 'Gareth Morgan, Peter Willis', 260, 'pictures/becoming-good-at-crises.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 8 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p8','pictures/Eric-Molob.jpg', 'Eric Molobir', 'Gaongalelwe Tiro', 387, 'Eric Molobi: A Legacy of Resolute Leadership reflects on the life of a man who helped shape South Africa’s transformation with quiet determination and unwavering resolve.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/Eric-Molob.jpg" alt="reed dance stalker">
+                            </div>
+                        </div>
+                        <h3 class="book-title">Eric Molobi</h3>
+                        <p class="book-author">Gaongalelwe Tiro</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R387.00</p>
+                        <button class="btn" onclick="addToCart('p8', 'Eric Molobi', 'Gaongalelwe Tiro', 387, 'pictures/Eric-Molob.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 9 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p9','pictures/hist-of-sa.jpg', 'History of South Africa', 'Thula Simpson', 470, 'South Africa was born in war, its growth has been marked by crises and ruptures, and it once again stands on a precipice.  History of South Africa explores the country’s tumultuous journey from the aftermath of the Second Anglo-Boer War to the COVID-19 pandemic.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/hist-of-sa.jpg"
+                                    alt="History of South Africa"></div>
+                        </div>
+                        <h3 class="book-title">History of South Africa</h3>
+                        <p class="book-author">Thula Simpson</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R470.00</p>
+                        <button class="btn" onclick="addToCart('p9', 'History of South Africa', 'Thula Simpson', 470, 'pictures/hist-of-sa.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 10 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p10','pictures/Africa-is-a-Country.jpg', 'Africa is a Country', 'William Shoki', 173, 'Africa Is a Country’s first-ever print edition explores the long cycle of mass protest over the last 15 years, using African cases not as footnotes to a global narrative, but as starting points for understanding the contradictions, ambitions, and limits of mass politics today.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/Africa-is-a-Country.jpg"
+                                    alt="Africa is a Country"></div>
+                        </div>
+                        <h3 class="book-title">Africa is a Country</h3>
+                        <p class="book-author">William Shoki</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R173.00</p>
+                        <button class="btn" onclick="addToCart('p10', 'Africa is a Country', 'William Shoki', 173, 'pictures/Africa-is-a-Country.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 11 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p11','pictures/invisible-people.jpg', 'The Invisible People', 'Phuthuma Nhleko', 360, 'In the next twenty-five years, Africa’s population is predicted to double in size to 2.5 billion, so that by 2050 one in four people on earth will be African. How can Africa accommodate and benefit from this huge demographic shift?', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/invisible-people.jpg" alt="The Invisible People"></div>
+                        </div>
+                        <h3 class="book-title">The Invisible People</h3>
+                        <p class="book-author">Phuthuma Nhleko</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R360.00</p>
+                        <button class="btn" onclick="addToCart('p11', 'The Invisible People', 'Phuthuma Nhleko', 360, 'pictures/invisible-people.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 12 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p12', 'pictures/The-Interpreters.jpg', 'The Interpreters', 'Hedley Twidle, Sean Christie', 370, 'From the underworld of zama-zama goldminers to the tragicomic closure of a Cape Town Zoo, from stick fighting to punk rock, game lodges to fruit farms, cricket pitches to mermaids, The Interpreters: South Africa’s New Nonfiction assembles a range of true stories that are often more far-fetched, and more compelling, than any fiction.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/The-Interpreters.jpg"
+                                    alt="Israel on the Brink"></div>
+                        </div>
+                        <h3 class="book-title">The Interpreters</h3>
+                        <p class="book-author">Hedley Twidle, Sean Christie</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R370.00</p>
+                        <button class="btn"
+                            onclick="addToCart('p12', 'The Interpreters', 'Hedley Twidle, Sean Christie', 370, 'pictures/The-Interpreters.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 13 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p13', 'pictures/old-soul.jpg', 'Old Soul', 'Susan Barker', 274, 'When two grieving strangers meet by chance in Osaka airport they uncover a disturbing connection. Jake’s best friend and Mariko’s twin brother each died, 6,000 miles apart, in brutal and unfathomable circumstances.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/old-soul.jpg" alt="Old Soul">
+                            </div>
+                        </div>
+                        <h3 class="book-title">Old Soul</h3>
+                        <p class="book-author">Susan Barker</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R275.00</p>
+                        <button class="btn" onclick="addToCart('p13', 'Old Soul', 'Susan Barker', 274, 'pictures/old-soul.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 14 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p14', 'pictures/home-seeking.jpg', 'Homeseeking', 'Karissa Chen', 305, 'Homeseeking follows the separated lovers through six decades of tumultuous Chinese history, telling Haiwen’s story from the present to the past while tracing Suchi’s from her childhood to the present, meeting at the crucible of their lives. From Shanghai to Hong Kong, Taiwan, and the United States, neither loses sight of the home they hold in their hearts.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/home-seeking.jpg" alt="Homeseeking"></div>
+                        </div>
+                        <h3 class="book-title">Homeseeking</h3>
+                        <p class="book-author">Karissa Chen</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R305.00</p>
+                        <button class="btn" onclick="addToCart('p14', 'Homeseeking', 'Karissa Chen', 305, 'pictures/home-seeking.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 15 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p15', 'pictures/bread-of-angels.jpg', 'Patti Smith', 'Richard Charkin', 500, 'God whispers through a crease in the wallpaper, writes Patti Smith in this indelible account of her life as an artist. A post-Second World War childhood unfolds in a condemned housing complex described in Dickensian detail: consumptive children, vanishing neighbours, an infested rat house, and a beguiling book of Irish fairytales.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/bread-of-angels.jpg" alt="Bread of Angels">
+                            </div>
+                        </div>
+                        <h3 class="book-title">Bread of Angels</h3>
+                        <p class="book-author">Patti Smith</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R500.00</p>
+                        <button class="btn" onclick="addToCart('p15', 'Bread of Angels', 'Patti Smith', 500, 'pictures/bread-of-angels.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+
+                    <!-- Book 16 -->
+                    <div class="book-card reveal">
+                        <div class="book-image-container"
+                            onclick="openPreview('p16', 'pictures/white-torture.jpg', 'White Torture', 'Narges Mohammadi', 335, 'Iranian prisons systematically violate human rights. In White Torture, fourteen women, including Nazanin Zaghari-Ratcliffe, share their experiences of imprisonment: harassment and beatings by guards, total blindfolding and denial of medical treatment.', false)"
+                            style="cursor: pointer;">
+                            <div class="book-image"><img src="pictures/white-torture.jpg" alt="White Torture">
+                            </div>
+                        </div>
+                        <h3 class="book-title">White Torture</h3>
+                        <p class="book-author">Narges Mohammadi</p>
+                        <p style="font-weight: 600; margin: 10px 0;">R335.00</p>
+                        <button class="btn" onclick="addToCart('p16', 'White Torture', 'Narges Mohammadi', 335, 'pictures/white-torture.jpg')"
+                            style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4><img src="images/Logo.jpg" alt="logo"></h4>
+                    <p>71 Roeland Street<br>Corner of Roeland and Buitenkant<br>Cape Town</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:0214622425">021 462 2425</a></li>
+                        <li><a href="mailto:booklounge@gmail.com">booklounge@gmail.com</a></li>
+                        <li><a href="https://wa.me/27639616154">WhatsApp: 063 961 6154</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hours</h4>
+                    <p>Mon - Fri: 09h00 - 18h00</p>
+                    <p>Sat: 09h00 - 16h00</p>
+                    <p>Sun: 10h00 - 16h00</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook"
+                            rel="noopener noreferrer"><i class="fab fa-facebook"></i></a> /
+                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram"
+                            rel="noopener noreferrer"><i class="fab fa-instagram"></i></a> /
+                        <a href="https://wa.me/+27711049647?text=Hi There%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20I%20would%20like%20to%20know%20more!"
+                            target="_blank" title="Whatsapp" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a> /
+                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter"
+                            rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 The Book Lounge. All rights reserved. <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
