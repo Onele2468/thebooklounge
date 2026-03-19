@@ -36,6 +36,9 @@
         <div class="container">
             <nav>
                 <a href="index.html" class="logo">THE BOOK LOUNGE</a>
+                <div class="menu-toggle" style="display: none;">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Books</a></li>
@@ -51,16 +54,16 @@
     </header>
 
     <main>
-        <section class="section" style="padding-top: 160px;">
+        <section class="section page-header" style="padding-top: 120px;">
             <div class="container">
-                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px;">
+                <div class="products-header">
                     <div>
                         <h1 class="reveal">Our Collection</h1>
                         <p class="reveal" style="color: var(--text-light);">Browse our carefully curated selection of
                             local and international titles.</p>
                     </div>
                 </div>
-            
+
                 <div class="product-grid">
                     <!-- Placeholder Book Cards -->
 
@@ -75,7 +78,8 @@
                         <h3 class="book-title">End and beginning</h3>
                         <p class="book-author">Athol Williams</p>
                         <p style="font-weight: 600; margin: 10px 0;">R200.00</p>
-                        <button class="btn" onclick="addToCart('p1', 'End and beginning', 'Athol Williams', 200.00, 'images/end-and-beginning.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p1', 'End and beginning', 'Athol Williams', 200.00, 'images/end-and-beginning.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -103,7 +107,8 @@
                         <h3 class="book-title">Benni</h3>
                         <p class="book-author">Benni McCarthy, Mark Gleeson</p>
                         <p style="font-weight: 600; margin: 10px 0;">R360.00</p>
-                        <button class="btn" onclick="addToCart('p3', 'Benni', 'Benni McCarthy, Mark Gleeson', 360, 'images/benni.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p3', 'Benni', 'Benni McCarthy, Mark Gleeson', 360, 'images/benni.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -164,7 +169,8 @@
                         <h3 class="book-title">Daughters of the Bamboo</h3>
                         <p class="book-author">Various Artists</p>
                         <p style="font-weight: 600; margin: 10px 0;">R210.00</p>
-                        <button class="btn" onclick="addToCart('p7', 'Daughters of the Bamboo', 'Various Artists', 210, 'images/daughters-of-the-bamboo.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p7', 'Daughters of the Bamboo', 'Various Artists', 210, 'images/daughters-of-the-bamboo.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -179,7 +185,8 @@
                         <h3 class="book-title">Reed Dance Stalker</h3>
                         <p class="book-author">Various</p>
                         <p style="font-weight: 600; margin: 10px 0;">R195.00</p>
-                        <button class="btn" onclick="addToCart('p8', 'Reed Dance Stalker', 'Various', 195, 'images/reed-dance-stalker.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p8', 'Reed Dance Stalker', 'Various', 195, 'images/reed-dance-stalker.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -194,7 +201,8 @@
                         <h3 class="book-title">Dark Side of the Earth</h3>
                         <p class="book-author">Various</p>
                         <p style="font-weight: 600; margin: 10px 0;">R240.00</p>
-                        <button class="btn" onclick="addToCart('p9', 'Dark Side of the Earth', 'Various', 240, 'images/dark-side-of-the-earth.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p9', 'Dark Side of the Earth', 'Various', 240, 'images/dark-side-of-the-earth.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -209,7 +217,8 @@
                         <h3 class="book-title">Detransition, Baby</h3>
                         <p class="book-author">Torrey Peters</p>
                         <p style="font-weight: 600; margin: 10px 0;">R315.00</p>
-                        <button class="btn" onclick="addToCart('p10', 'Detransition, Baby', 'Torrey Peters', 315, 'images/Detransition-Baby-by-Torrey-Peters.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p10', 'Detransition, Baby', 'Torrey Peters', 315, 'images/Detransition-Baby-by-Torrey-Peters.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -223,7 +232,8 @@
                         <h3 class="book-title">Mother of Books</h3>
                         <p class="book-author">Various</p>
                         <p style="font-weight: 600; margin: 10px 0;">R500.00</p>
-                        <button class="btn" onclick="addToCart('p11', 'Mother of Books', 'Various', 500, 'images/mother-of-books.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p11', 'Mother of Books', 'Various', 500, 'images/mother-of-books.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -232,8 +242,8 @@
                         <div class="book-image-container"
                             onclick="openPreview('p12', 'images/israel-on-the-brink.jpg', 'Israel on the Brink', 'Ilan Pappe', 550, 'Ilan Pappe paves a path out of the Jewish state, rooted in restorative justice and decolonisation, including the return of refugees, the end of illegal settlements, and building bridges with the Arab world.', false)"
                             style="cursor: pointer;">
-                            <div class="book-image"><img src="images/israel-on-the-brink.jpg"
-                                    alt="Israel on the Brink"></div>
+                            <div class="book-image"><img src="images/israel-on-the-brink.jpg" alt="Israel on the Brink">
+                            </div>
                         </div>
                         <h3 class="book-title">Israel on the Brink</h3>
                         <p class="book-author">Ilan Pappe</p>
@@ -254,7 +264,8 @@
                         <h3 class="book-title">Cederberg - The Book</h3>
                         <p class="book-author">Various Authors</p>
                         <p style="font-weight: 600; margin: 10px 0;">R450.00</p>
-                        <button class="btn" onclick="addToCart('p13', 'Cederberg - The Book', 'Various Authors', 450, 'images/cederberg-the-book.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p13', 'Cederberg - The Book', 'Various Authors', 450, 'images/cederberg-the-book.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -268,7 +279,8 @@
                         <h3 class="book-title">Born a Crime</h3>
                         <p class="book-author">Trevor Noah</p>
                         <p style="font-weight: 600; margin: 10px 0;">R260.00</p>
-                        <button class="btn" onclick="addToCart('p14', 'Born a Crime', 'Trevor Noah', 260, 'images/trevornoah.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p14', 'Born a Crime', 'Trevor Noah', 260, 'images/trevornoah.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -283,7 +295,8 @@
                         <h3 class="book-title">My Back Pages</h3>
                         <p class="book-author">Richard Charkin</p>
                         <p style="font-weight: 600; margin: 10px 0;">R290.00</p>
-                        <button class="btn" onclick="addToCart('p15', 'My Back Pages', 'Richard Charkin', 290, 'images/my-back-pages.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p15', 'My Back Pages', 'Richard Charkin', 290, 'images/my-back-pages.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -298,7 +311,8 @@
                         <h3 class="book-title">Heartstopper Vol 1</h3>
                         <p class="book-author">Alice Oseman</p>
                         <p style="font-weight: 600; margin: 10px 0;">R395.00</p>
-                        <button class="btn" onclick="addToCart('p16', 'Heartstopper Vol 1', 'Alice Oseman', 395, 'images/heartstopper.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p16', 'Heartstopper Vol 1', 'Alice Oseman', 395, 'images/heartstopper.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
                 </div>
