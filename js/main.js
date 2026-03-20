@@ -240,3 +240,30 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
     createModal();
 });
+
+const books = [
+  {
+    _id: 'book1',
+    title: 'The Great Adventure',
+    author: 'Jane Doe',
+    price: 15.99,
+    description: 'An exciting journey through unknown lands.',
+    imageUrl: 'https://via.placeholder.com/150/FF0000/FFFFFF?text=Book1'
+  },
+  {
+    _id: 'book2',
+    title: 'Coding for Dummies',
+    author: 'John Smith',
+    price: 25.00,
+    description: 'A beginner-friendly guide to programming.',
+    imageUrl: 'https://via.placeholder.com/150/0000FF/FFFFFF?text=Book2'
+  },
+  {
+    _id: 'book3',
+    title: 'Mystery of the Old House',
+    author: 'Emily White',
+    price: 12.50,
+    description: 'A thrilling mystery that will keep you guessing.',
+    imageUrl: 'https://via.placeholder.com/150/008000/FFFFFF?text=Book3'
+  }
+];
