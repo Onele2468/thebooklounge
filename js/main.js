@@ -1,3 +1,60 @@
+import { client } from './sanity/client.js';
+
+async function getBooks() {
+    const query = `*[_type == "book"]{
+        _id,
+        title,
+        author,
+        price,
+        description,
+        "imgSrc": coverImage.asset->url
+    }`;
+
+    try {
+        const books = await client.fetch(query);
+        console.log("Fetched books:", books);
+        
+        const container = document.getElementById('book-list-container');
+        if (!container) return;
+
+        // Optionally clear existing hardcoded books or just append
+        // container.innerHTML = ''; 
+
+        books.forEach(book => {
+            const bookElement = document.createElement('div');
+            bookElement.className = 'reveal';
+            bookElement.style.textAlign = 'center';
+            
+            const imgSrc = book.imgSrc || 'images/placeholder.jpg';
+            const title = book.title || 'Untitled';
+            const author = book.author || 'Unknown Author';
+            const price = book.price || 0;
+            const description = (book.description || '').replace(/'/g, "\\'");
+            const id = book._id;
+
+            bookElement.innerHTML = `
+                <div class="book-image-container" 
+                     onclick="openPreview('${id}', '${imgSrc}', '${title.replace(/'/g, "\\'")}', '${author.replace(/'/g, "\\'")}', ${price}, '${description}', false)"
+                     style="cursor: pointer;">
+                    <div class="book-image"><img src="${imgSrc}" alt="${title}"></div>
+                </div>
+                <h4 style="margin-bottom: 5px;">${title}</h4>
+                <p style="color: var(--text-light); font-size: 0.9rem;">${author}</p>
+                <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R${price.toFixed(2)}</p>
+                <button class="btn" 
+                        onclick="addToCart('${id}', '${title.replace(/'/g, "\\'")}', '${author.replace(/'/g, "\\'")}', ${price}, '${imgSrc}')"
+                        style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
+            `;
+            container.appendChild(bookElement);
+            
+            // Trigger reveal animation for new elements
+            setTimeout(() => bookElement.classList.add('active'), 100);
+        });
+    } catch (error) {
+        console.error("Error fetching books:", error);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- Cart State Management ---
     let cart = JSON.parse(localStorage.getItem('book_lounge_cart')) || [];
@@ -239,31 +296,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize UI
     updateCartUI();
     createModal();
+    getBooks();
 });
-
-const books = [
-  {
-    _id: 'book1',
-    title: 'The Great Adventure',
-    author: 'Jane Doe',
-    price: 15.99,
-    description: 'An exciting journey through unknown lands.',
-    imageUrl: 'https://via.placeholder.com/150/FF0000/FFFFFF?text=Book1'
-  },
-  {
-    _id: 'book2',
-    title: 'Coding for Dummies',
-    author: 'John Smith',
-    price: 25.00,
-    description: 'A beginner-friendly guide to programming.',
-    imageUrl: 'https://via.placeholder.com/150/0000FF/FFFFFF?text=Book2'
-  },
-  {
-    _id: 'book3',
-    title: 'Mystery of the Old House',
-    author: 'Emily White',
-    price: 12.50,
-    description: 'A thrilling mystery that will keep you guessing.',
-    imageUrl: 'https://via.placeholder.com/150/008000/FFFFFF?text=Book3'
-  }
-];

@@ -1,4 +1,4 @@
-import { createClient } from '@sanity/client'
+import { createClient } from 'https://esm.sh/@sanity/client'
 
 export const client = createClient({
   projectId: '8tul7kq9', // find this in sanity.json or sanity.config.js in your studio

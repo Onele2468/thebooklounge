@@ -59,25 +59,27 @@
                 <div class="products-header">
                     <div>
                         <h1 class="reveal">Staff Recommendations</h1>
-                        <p class="reveal" style="color: var(--text-light);">Handpicked favorites from the passionate team at Book Lounge.</p>
+                        <p class="reveal" style="color: var(--text-light);">Handpicked favorites from the passionate
+                            team at Book Lounge.</p>
                     </div>
                 </div>
-            
-                <div class="product-grid">
+
+                <div id="book-list-container" class="product-grid">
                     <!-- Placeholder Book Cards -->
 
                     <!-- Book 1 -->
                     <div class="book-card reveal">
                         <div class="book-image-container"
-                            onclick="openPreview('p1','pictures/cape-fever.jpg', 'Cape Fever', 'Nadia Davids',  360, 'Set in the Cape Colony just after WW1, Cape Fever is a superb depiction of the Cape in the 1920s, particularly of the Quarter and the District.', false)"
+                            onclick="openPreview('p1','images/cape-fever.jpg', 'Cape Fever', 'Nadia Davids',  360, 'Set in the Cape Colony just after WW1, Cape Fever is a superb depiction of the Cape in the 1920s, particularly of the Quarter and the District.', false)"
                             style="cursor: pointer;">
-                            <div class="book-image"><img src="pictures/cape-fever.jpg" alt="Cape fever">
+                            <div class="book-image"><img src="images/cape-fever.jpg" alt="Cape fever">
                             </div>
                         </div>
                         <h3 class="book-title">Cape Fever</h3>
                         <p class="book-author">Nadia Davids</p>
                         <p style="font-weight: 600; margin: 10px 0;">R360.00</p>
-                        <button class="btn" onclick="addToCart('p1', 'Cape Fever', 'Nadia Davids', 360.00, 'pictures/cape-fever.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p1', 'Cape Fever', 'Nadia Davids', 360.00, 'pictures/cape-fever.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -98,14 +100,16 @@
                     <!-- Book 3 -->
                     <div class="book-card reveal">
                         <div class="book-image-container"
-                            onclick="openPreview('p3', 'pictures/long-walk-to-freedom.jpg', 'Long Walk to Freedom', 'Nelson Mandela', 415, 'The riveting memoirs of the outstanding moral and political leader of our time: Nelson Mandela', false)"
+                            onclick="openPreview('p3', 'images/long-walk-to-freedom.jpg', 'Long Walk to Freedom', 'Nelson Mandela', 415, 'The riveting memoirs of the outstanding moral and political leader of our time: Nelson Mandela', false)"
                             style="cursor: pointer;">
-                            <div class="book-image"><img src="pictures/long-walk-to-freedom.jpg" alt="Long Walk to Freedom"></div>
+                            <div class="book-image"><img src="images/long-walk-to-freedom.jpg"
+                                    alt="Long Walk to Freedom"></div>
                         </div>
                         <h3 class="book-title">Long Walk to Freedom</h3>
                         <p class="book-author">Nelson Mandela</p>
                         <p style="font-weight: 600; margin: 10px 0;">R415.00</p>
-                        <button class="btn" onclick="addToCart('p3', 'Long Walk to Freedom', 'Nelson Mandela', 415, 'pictures/long-walk-to-freedom.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p3', 'Long Walk to Freedom', 'Nelson Mandela', 415, 'pictures/long-walk-to-freedom.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -145,8 +149,7 @@
                         <div class="book-image-container"
                             onclick="openPreview('p6','pictures/soft-life.jpg', 'The Soft Life ', 'Lebohang Masango', 310, 'In this book, Lebohang Masango explores how women in South Africa give meaning to aspiration, romance and love in their pursuit of the Soft Life: a life free of hardship.', true)"
                             style="cursor: pointer;">
-                            <div class="book-image"><img src="pictures/soft-life.jpg"
-                                    alt="The Soft Life"></div>
+                            <div class="book-image"><img src="pictures/soft-life.jpg" alt="The Soft Life"></div>
                         </div>
                         <h3 class="book-title">The Soft Life</h3>
                         <p class="book-author">Lebohang Masango</p>
@@ -166,7 +169,8 @@
                         <h3 class="book-title">Becoming Good at Crises</h3>
                         <p class="book-author">Gareth Morgan, Peter Willis</p>
                         <p style="font-weight: 600; margin: 10px 0;">R260.00</p>
-                        <button class="btn" onclick="addToCart('p7', 'Becoming Good at Crises', 'Gareth Morgan, Peter Willis', 260, 'pictures/becoming-good-at-crises.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p7', 'Becoming Good at Crises', 'Gareth Morgan, Peter Willis', 260, 'pictures/becoming-good-at-crises.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -181,7 +185,8 @@
                         <h3 class="book-title">Eric Molobi</h3>
                         <p class="book-author">Gaongalelwe Tiro</p>
                         <p style="font-weight: 600; margin: 10px 0;">R387.00</p>
-                        <button class="btn" onclick="addToCart('p8', 'Eric Molobi', 'Gaongalelwe Tiro', 387, 'pictures/Eric-Molob.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p8', 'Eric Molobi', 'Gaongalelwe Tiro', 387, 'pictures/Eric-Molob.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -190,13 +195,14 @@
                         <div class="book-image-container"
                             onclick="openPreview('p9','pictures/hist-of-sa.jpg', 'History of South Africa', 'Thula Simpson', 470, 'South Africa was born in war, its growth has been marked by crises and ruptures, and it once again stands on a precipice.  History of South Africa explores the country’s tumultuous journey from the aftermath of the Second Anglo-Boer War to the COVID-19 pandemic.', false)"
                             style="cursor: pointer;">
-                            <div class="book-image"><img src="pictures/hist-of-sa.jpg"
-                                    alt="History of South Africa"></div>
+                            <div class="book-image"><img src="pictures/hist-of-sa.jpg" alt="History of South Africa">
+                            </div>
                         </div>
                         <h3 class="book-title">History of South Africa</h3>
                         <p class="book-author">Thula Simpson</p>
                         <p style="font-weight: 600; margin: 10px 0;">R470.00</p>
-                        <button class="btn" onclick="addToCart('p9', 'History of South Africa', 'Thula Simpson', 470, 'pictures/hist-of-sa.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p9', 'History of South Africa', 'Thula Simpson', 470, 'pictures/hist-of-sa.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -211,7 +217,8 @@
                         <h3 class="book-title">Africa is a Country</h3>
                         <p class="book-author">William Shoki</p>
                         <p style="font-weight: 600; margin: 10px 0;">R173.00</p>
-                        <button class="btn" onclick="addToCart('p10', 'Africa is a Country', 'William Shoki', 173, 'pictures/Africa-is-a-Country.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p10', 'Africa is a Country', 'William Shoki', 173, 'pictures/Africa-is-a-Country.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -220,12 +227,14 @@
                         <div class="book-image-container"
                             onclick="openPreview('p11','pictures/invisible-people.jpg', 'The Invisible People', 'Phuthuma Nhleko', 360, 'In the next twenty-five years, Africa’s population is predicted to double in size to 2.5 billion, so that by 2050 one in four people on earth will be African. How can Africa accommodate and benefit from this huge demographic shift?', false)"
                             style="cursor: pointer;">
-                            <div class="book-image"><img src="pictures/invisible-people.jpg" alt="The Invisible People"></div>
+                            <div class="book-image"><img src="pictures/invisible-people.jpg" alt="The Invisible People">
+                            </div>
                         </div>
                         <h3 class="book-title">The Invisible People</h3>
                         <p class="book-author">Phuthuma Nhleko</p>
                         <p style="font-weight: 600; margin: 10px 0;">R360.00</p>
-                        <button class="btn" onclick="addToCart('p11', 'The Invisible People', 'Phuthuma Nhleko', 360, 'pictures/invisible-people.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p11', 'The Invisible People', 'Phuthuma Nhleko', 360, 'pictures/invisible-people.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -234,8 +243,8 @@
                         <div class="book-image-container"
                             onclick="openPreview('p12', 'pictures/The-Interpreters.jpg', 'The Interpreters', 'Hedley Twidle, Sean Christie', 370, 'From the underworld of zama-zama goldminers to the tragicomic closure of a Cape Town Zoo, from stick fighting to punk rock, game lodges to fruit farms, cricket pitches to mermaids, The Interpreters: South Africa’s New Nonfiction assembles a range of true stories that are often more far-fetched, and more compelling, than any fiction.', false)"
                             style="cursor: pointer;">
-                            <div class="book-image"><img src="pictures/The-Interpreters.jpg"
-                                    alt="Israel on the Brink"></div>
+                            <div class="book-image"><img src="pictures/The-Interpreters.jpg" alt="Israel on the Brink">
+                            </div>
                         </div>
                         <h3 class="book-title">The Interpreters</h3>
                         <p class="book-author">Hedley Twidle, Sean Christie</p>
@@ -256,7 +265,8 @@
                         <h3 class="book-title">Old Soul</h3>
                         <p class="book-author">Susan Barker</p>
                         <p style="font-weight: 600; margin: 10px 0;">R275.00</p>
-                        <button class="btn" onclick="addToCart('p13', 'Old Soul', 'Susan Barker', 274, 'pictures/old-soul.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p13', 'Old Soul', 'Susan Barker', 274, 'pictures/old-soul.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -270,7 +280,8 @@
                         <h3 class="book-title">Homeseeking</h3>
                         <p class="book-author">Karissa Chen</p>
                         <p style="font-weight: 600; margin: 10px 0;">R305.00</p>
-                        <button class="btn" onclick="addToCart('p14', 'Homeseeking', 'Karissa Chen', 305, 'pictures/home-seeking.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p14', 'Homeseeking', 'Karissa Chen', 305, 'pictures/home-seeking.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -285,7 +296,8 @@
                         <h3 class="book-title">Bread of Angels</h3>
                         <p class="book-author">Patti Smith</p>
                         <p style="font-weight: 600; margin: 10px 0;">R500.00</p>
-                        <button class="btn" onclick="addToCart('p15', 'Bread of Angels', 'Patti Smith', 500, 'pictures/bread-of-angels.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p15', 'Bread of Angels', 'Patti Smith', 500, 'pictures/bread-of-angels.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
 
@@ -300,7 +312,8 @@
                         <h3 class="book-title">White Torture</h3>
                         <p class="book-author">Narges Mohammadi</p>
                         <p style="font-weight: 600; margin: 10px 0;">R335.00</p>
-                        <button class="btn" onclick="addToCart('p16', 'White Torture', 'Narges Mohammadi', 335, 'pictures/white-torture.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p16', 'White Torture', 'Narges Mohammadi', 335, 'pictures/white-torture.jpg')"
                             style="padding: 8px 16px; font-size: 0.85rem;">Add to Cart</button>
                     </div>
                 </div>
@@ -308,12 +321,12 @@
         </section>
     </main>
 
-   <footer>
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4><img src="images/Logo.jpg" alt="logo"></h4>
-                    
+
                 </div>
                 <div class="footer-col">
                     <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
@@ -348,7 +361,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>

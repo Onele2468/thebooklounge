@@ -37,7 +37,8 @@
         <!-- Hero Section -->
         <section class="section hero"
             style="margin-top:55px; text-align: center; background: linear-gradient(rgba(26,26,26,0.05), rgba(26,26,26,0.05)), url('images/hero-bg.jpg') center/cover;">
-            <div class="container reveal" style="background: #f9f9f9; padding: 30px; backdrop-filter: blur(20px); border-radius: 50px 0 50px 0;">
+            <div class="container reveal"
+                style="background: #f9f9f9; padding: 30px; backdrop-filter: blur(20px); border-radius: 50px 0 50px 0;">
                 <h1 style="font-size: 4rem; margin-bottom: 20px;">For the Love of Books</h1>
                 <p style="font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto 40px;">An
                     independent bookstore in the heart of Cape Town, dedicated to bringing you the best in local and
@@ -64,7 +65,8 @@
                         <h3>Staff Recommendations</h3>
                         <p style="color: var(--text-light); margin-bottom: 15px;">Handpicked favorites from our
                             passionate team.</p>
-                        <a href="staff-recomendation.html?category=staff" style="font-weight: 600; color: var(--accent-color);">See
+                        <a href="staff-recomendation.html?category=staff"
+                            style="font-weight: 600; color: var(--accent-color);">See
                             Picks →</a>
                     </div>
                     <div class="reveal"
@@ -82,17 +84,19 @@
         <section class="section">
             <div class="container">
                 <h2 class="reveal" style="margin-bottom: 40px;">New Arrivals</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                <div id="book-list-container"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
                     <!-- Book 1 -->
                     <div class="reveal" style="text-align: center;">
                         <div class="book-image-container"
                             onclick="openPreview('p1', 'images/half-of-a-yellow-sun.jpg', 'Half of a Yellow Sun', 'Chimamanda Nogzi Adichie', 295, 'Winner of the Bailey’s Prize Best of the Best Winner of the 2007 Orange Prize for Fiction `Chimamanda Ngozi Adichie’s masterpiece, winner of the Orange Prize for Fiction, is a novel about Africa in a wider sense:', false)"
                             style="cursor: pointer;">
-                            <div class="book-image"><img src="images/half-of-a-yellow-sun.jpg" alt="Half of a Yellow Sun"></div>
+                            <div class="book-image"><img src="images/half-of-a-yellow-sun.jpg"
+                                    alt="Half of a Yellow Sun"></div>
                         </div>
-                        <h4 style="margin-bottom: 5px;">Half of a Yellow Sun</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Chimamanda Nogzi Adichie</p>
-                        <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R295.00</p>
+                        <h4 style="margin-bottom: 5px;"></h4>
+                        <p style="color: var(--text-light); font-size: 0.9rem;"></p>
+                        <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;"></p>
                         <button class="btn"
                             onclick="addToCart('p1', 'Half of a Yellow Sun', 'Chimamanda Nigosi Adichie', 295, 'images/half-of-a-yellow-sun.jpg')"
                             style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
@@ -120,7 +124,8 @@
                         <h4 style="margin-bottom: 5px;">The Yearning</h4>
                         <p style="color: var(--text-light); font-size: 0.9rem;">Mohale Mashigo</p>
                         <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R270.00</p>
-                        <button class="btn" onclick="addToCart('p4', 'The Yearning', 'Mohale Mashigo', 270, 'images/yearning.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p4', 'The Yearning', 'Mohale Mashigo', 270, 'images/yearning.jpg')"
                             style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
                     </div>
                     <!-- Book 4 -->
@@ -133,7 +138,8 @@
                         <h4 style="margin-bottom: 5px;">The Smallest Ones</h4>
                         <p style="color: var(--text-light); font-size: 0.9rem;">Deon Meyer</p>
                         <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R300.00</p>
-                        <button class="btn" onclick="addToCart('p5', 'The Smallest Ones', 'Popina Khumanda', 300, 'images/smallest-ones.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p5', 'The Smallest Ones', 'Popina Khumanda', 300, 'images/smallest-ones.jpg')"
                             style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
                     </div>
                     <!-- Book 5 -->
@@ -162,7 +168,8 @@
                         <h4 style="margin-bottom: 5px;">Cederberg-The Book</h4>
                         <p style="color: var(--text-light); font-size: 0.9rem;">Various Authors</p>
                         <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R450.00</p>
-                        <button class="btn" onclick="addToCart('p7', 'Cederberg - The Book', 'Various Authors', 450, 'images/cederberg-the-book.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p7', 'Cederberg - The Book', 'Various Authors', 450, 'images/cederberg-the-book.jpg')"
                             style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
                     </div>
                     <!-- Book 7 -->
@@ -176,7 +183,8 @@
                         <h4 style="margin-bottom: 5px;">Land Lines</h4>
                         <p style="color: var(--text-light); font-size: 0.9rem;">Shari Daya</p>
                         <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R280.00</p>
-                        <button class="btn" onclick="addToCart('p8', 'Land Lines', 'Shari Daya', 280, 'images/land-lines-by-shari-daya.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p8', 'Land Lines', 'Shari Daya', 280, 'images/land-lines-by-shari-daya.jpg')"
                             style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
                     </div>
                     <!-- Book 8 -->
@@ -190,7 +198,8 @@
                         <h4 style="margin-bottom: 5px;">SA Indigenous Garden</h4>
                         <p style="color: var(--text-light); font-size: 0.9rem;">Various</p>
                         <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R350.00</p>
-                        <button class="btn" onclick="addToCart('p9', 'SA Indigenous Garden Plants', 'Various', 350, 'images/misinterpretation.jpg')"
+                        <button class="btn"
+                            onclick="addToCart('p9', 'SA Indigenous Garden Plants', 'Various', 350, 'images/misinterpretation.jpg')"
                             style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
                     </div>
                 </div>
@@ -212,12 +221,12 @@
         </section>
     </main>
 
-   <footer>
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4><img src="images/Logo.jpg" alt="logo"></h4>
-                    
+
                 </div>
                 <div class="footer-col">
                     <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
@@ -252,7 +261,7 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
