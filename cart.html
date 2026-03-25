@@ -1,413 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart | The Book Lounge</title>
-    <meta name="description" content="Review your selected books and complete your purchase at The Book Lounge.">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="https://kit.fontawesome.com/ac35ccda32.js" crossorigin="anonymous"></script>
-    <style>
-        .cart-section {
-            padding: 120px 20px 60px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Lounge | Cart</title>
 
-        .cart-grid {
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 40px;
-            align-items: start;
-        }
-
-        @media (max-width: 992px) {
-            .cart-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Cart Table Styles */
-        .cart-table-container {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th {
-            text-align: left;
-            padding: 20px;
-            background: var(--secondary-color);
-            border-bottom: 1px solid var(--border-color);
-            font-family: var(--font-heading);
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        td {
-            padding: 20px;
-            border-bottom: 1px solid var(--border-color);
-            vertical-align: middle;
-        }
-
-        .cart-item-info {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .cart-item-img {
-            width: 80px;
-            aspect-ratio: 2/3;
-            background: #eee;
-            border: 1px solid var(--border-color);
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .cart-item-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .remove-btn {
-            color: var(--accent-color);
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 5px;
-            display: inline-block;
-        }
-
-        .remove-btn:hover {
-            text-decoration: underline;
-        }
-
-        .quantity-control {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border: 1px solid var(--border-color);
-            padding: 5px 10px;
-            border-radius: 4px;
-            width: fit-content;
-        }
-
-        .quantity-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            color: var(--text-light);
-            padding: 0 5px;
-        }
-
-        .quantity-btn:hover {
-            color: var(--accent-color);
-        }
-
-        /* Summary & Form Styles */
-        .cart-sidebar {
-            position: sticky;
-            top: 100px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .summary-card,
-        .form-card {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            padding: 30px;
-            border-radius: 4px;
-        }
-
-        .summary-card h3,
-        .form-card h3 {
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            color: var(--text-light);
-        }
-
-        .summary-total {
-            border-top: 2px solid var(--primary-color);
-            padding-top: 15px;
-            margin-top: 15px;
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-family: var(--font-body);
-            font-size: 1rem;
-            transition: var(--transition-smooth);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 2px rgba(139, 38, 53, 0.1);
-        }
-
-        .row-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .clear-cart-btn {
-            background: none;
-            border: 1px solid var(--border-color);
-            color: var(--text-light);
-            padding: 10px 20px;
-            font-weight: 600;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-top: 20px;
-            width: 100%;
-            transition: var(--transition-smooth);
-        }
-
-        .clear-cart-btn:hover {
-            background: #f5f5f5;
-            color: var(--accent-color);
-            border-color: var(--accent-color);
-        }
-
-        .empty-cart-msg {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .empty-cart-msg i {
-            font-size: 4rem;
-            color: var(--border-color);
-            margin-bottom: 20px;
-        }
-    </style>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/ac35ccda32.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">THE BOOK LOUNGE</a>
-                <div class="menu-toggle" style="display: none;">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Books</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li class="cart-icon-wrapper">
-                        <a href="cart.html" style="font-weight: 700; color: var(--accent-color);">Cart</a>
-                        <span class="cart-count">0</span>
-                    </li>
-                </ul>
-            </nav>
+<body data-page="cart">
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container nav">
+
+    <h1 class="logo">Book Lounge</h1>
+
+    <!-- MENU TOGGLE -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="cart.html" class="active">Order (<span id="cartCount">0</span>)</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CART ================= -->
+<main>
+  <div class="container cart-section">
+
+    <h1 class="cart-title">Your Shopping Cart</h1>
+
+    <div id="cart-content">
+      <div class="cart-grid">
+
+        <!-- LEFT -->
+        <div class="cart-left">
+          <div class="cart-table-container">
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Subtotal</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+
+              <tbody id="cart-items-tbody"></tbody>
+            </table>
+
+          </div>
+
+          <button id="clear-cart-btn" class="clear-cart-btn">Clear Cart</button>
         </div>
-    </header>
 
-    <main>
-        <div class="container cart-section">
-            <h1 class="reveal" style="margin-bottom: 40px;">Your Shopping Cart</h1>
+        <!-- RIGHT -->
+        <div class="cart-sidebar">
 
-            <div id="cart-content" class="reveal">
-                <!-- If cart is empty, this will be replaced -->
-                <div class="cart-grid">
-                    <div class="cart-left">
-                        <div class="cart-table-container">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Subtotal</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="cart-items-tbody">
-                                    <!-- Items will be injected here -->
-                                </tbody>
-                            </table>
-                        </div>
-                        <button id="clear-cart-btn" class="clear-cart-btn">Clear Cart</button>
-                    </div>
+          <div class="summary-card" id="cart-summary"></div>
 
-                    <div class="cart-sidebar">
-                        <div class="summary-card" id="cart-summary">
-                            <h3>Order Summary</h3>
-                            <!-- Summary will be injected here -->
-                        </div>
+          <div class="form-card">
+            <h3>Customer Purchase Form</h3>
 
-                        <div class="form-card">
-                            <h3>Customer Purchase Form</h3>
-                            <form id="checkout-form">
-                                <div class="form-group">
-                                    <label for="full_name">Full Name</label>
-                                    <input type="text" id="full_name" class="form-control"
-                                        placeholder="Full Name"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" class="form-control" placeholder="+27 12 345 6789"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" id="email" class="form-control" placeholder="Email Address"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="address">Delivery Address</label>
-                                    <textarea id="address" class="form-control" rows="3" required></textarea>
-                                </div>
+            <form id="checkout-form" class="checkout-form">
 
-                                <div class="form-group">
-                                    <label for="card_number">Card Number</label>
-                                    <input type="text" id="card_number" class="form-control"
-                                        placeholder="0000 0000 0000 0000" required>
-                                </div>
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" required>
+              </div>
 
-                                <div class="row-2">
-                                    <div class="form-group">
-                                        <label for="expiry">Expiry Date</label>
-                                        <input type="text" id="expiry" class="form-control" placeholder="MM/YY"
-                                            required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cvc">CVC</label>
-                                        <input type="text" id="cvc" class="form-control" placeholder="123" required>
-                                    </div>
-                                </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" required>
+              </div>
 
-                                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Place
-                                    Order</button>
-                            </form>
-                        </div>
-                    </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" required>
+              </div>
+
+              <div class="form-group">
+                <label>Address</label>
+                <textarea required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" required>
+              </div>
+
+              <div class="row-2">
+                <div class="form-group">
+                  <label>Expiry</label>
+                  <input type="text" required>
                 </div>
-            </div>
 
-            <div id="cart-empty" class="reveal" style="display: none;">
-                <div class="empty-cart-msg">
-                    <i class="fas fa-shopping-basket"></i>
-                    <h2>Your cart is currently empty.</h2>
-                    <p style="color: var(--text-light); margin: 20px 0 30px;">Looks like you haven't added anything to
-                        your cart yet.</p>
-                    <a href="products.html" class="btn">Start Shopping</a>
+                <div class="form-group">
+                  <label>CVC</label>
+                  <input type="text" required>
                 </div>
-            </div>
+              </div>
+
+              <button type="submit" class="btn checkout-btn">Place Order</button>
+
+            </form>
+          </div>
+
         </div>
-    </main>
 
-      <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4><img src="images/Logo.jpg" alt="logo"></h4>
-                    
-                </div>
-                <div class="footer-col">
-                    <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
-                    <ul>
-                        <p>71 Roeland Street<br>Corner of Roeland and Buitenkant<br>Cape Town</p>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4><i class="fas fa-clock"></i>Hours</h4>
-                    <p>Mon - Fri: 09h00 - 18h00</p>
-                    <p>Sat: 09h00 - 16h00</p>
-                    <p>Sun: 10h00 - 16h00</p>
-                </div>
+      </div>
+    </div>
 
-                <div class="footer-col">
-                    <h4><i class="fas fa-share-alt"></i>Follow Us</h4>
-                    <div style="display: flex; gap: 15px;">
-                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook"
-                            rel="noopener noreferrer"><i class="fab fa-facebook"></i></a> /
-                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram"
-                            rel="noopener noreferrer"><i class="fab fa-instagram"></i></a> /
-                        <a href="https://wa.me/+27711049647?text=Hi There%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20I%20would%20like%20to%20know%20more!"
-                            target="_blank" title="Whatsapp" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a> /
-                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter"
-                            rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2026 The Book Lounge. All rights reserved. <a href="policy-privacy.html">Privacy Policy</a>
-            </div>
+    <!-- EMPTY CART -->
+    <div id="cart-empty" style="display:none;">
+      <div class="empty-cart-msg">
+        <i class="fas fa-shopping-basket"></i>
+        <h2>Your cart is currently empty.</h2>
+        <p>Looks like you haven't added anything yet.</p>
+        <a href="books.html" class="btn">Start Shopping</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <h4><img src="images/Logo.jpg" alt="logo"></h4>
+        <p>Your trusted independent bookstore.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="cart.html">Order</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>71 Roeland Street<br>Cape Town</p>
+      </div>
+
+      <div class="footer-col">
+          <h4><i class="fas fa-share-alt"></i> Follow Us</h4>
+          <div class="social-links">
+            <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/+27711049647?text=Hi There Booklounge, I'm interested in your books and I would like to know more!" target="_blank" title="WhatsApp" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
-    </footer>
 
-    <script type="module" src="js/main.js"></script>
-    <script>
-        // Specific Cart Page Logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const clearBtn = document.getElementById('clear-cart-btn');
-            if (clearBtn) {
-                clearBtn.addEventListener('click', () => {
-                    if (confirm('Are you sure you want to clear your cart?')) {
-                        localStorage.removeItem('book_lounge_cart');
-                        window.location.reload();
-                    }
-                });
-            }
+    </div>
 
-            // Handle visibility of empty vs full cart
-            const updateCartVisibility = () => {
-                const cart = JSON.parse(localStorage.getItem('book_lounge_cart')) || [];
-                const fullCart = document.getElementById('cart-content');
-                const emptyCart = document.getElementById('cart-empty');
+    <div class="footer-bottom">
+      <p>&copy; 2026 Book Lounge</p>
+    </div>
 
-                if (cart.length === 0) {
-                    fullCart.style.display = 'none';
-                    emptyCart.style.display = 'block';
-                } else {
-                    fullCart.style.display = 'block';
-                    emptyCart.style.display = 'none';
-                }
-            };
+  </div>
+</footer>
 
-            updateCartVisibility();
+<script src="js/books.js"></script>
+<script src="js/script.js"></script>
 
-            // The main.js handles the actual rendering via renderCartPage()
-            // which is called in updateCartUI() if on cart.html.
-        });
-    </script>
 </body>
-
 </html>

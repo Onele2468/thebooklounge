@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Detail | Book Lounge Store</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/ac35ccda32.js" crossorigin="anonymous"></script>
+</head>
+
+<body data-page="book">
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container nav">
+
+    <h1 class="logo">Book Lounge</h1>
+
+    <!-- MENU TOGGLE -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="books.html" class="active">Books</a></li>
+        <li><a href="cart.html">Order (<span id="cartCount">0</span>)</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= BOOK DETAIL ================= -->
+<main class="container" style="padding: 40px 20px;">
+  <div class="detail-back">
+    <a href="books.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> Back to Books
+    </a>
+  </div>
+  
+  <div id="singleBookContainer">
+    <p>Loading book details...</p>
+  </div>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <h4><img src="images/Logo.jpg" alt="logo"></h4>
+        <p>Your trusted independent bookstore.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="cart.html">Order</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>71 Roeland Street<br>Cape Town</p>
+      </div>
+
+      <div class="footer-col">
+        <h4><i class="fas fa-share-alt"></i> Follow Us</h4>
+        <div class="social-links">
+          <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+          <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/+27711049647?text=Hi There Booklounge, I'm interested in your books and I would like to know more!" target="_blank" title="WhatsApp" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Book Lounge</p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<!-- We include script.js so cart counting and navbar toggle still work -->
+<!-- BUT we override `window.loadSanityBooks` below so we just fetch ONE book -->
+<script>
+  window.books = []; // Initialize empty array so script.js doesn't crash
+  window.loadSanityBooks = async function() {}; // Prevent script.js from loading all books on this page
+</script>
+<script src="js/script.js"></script>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@sanity/client';
+  
+  const client = createClient({
+    projectId: 'denvgz3m',
+    dataset: 'production',
+    useCdn: true,
+    apiVersion: '2024-03-23'
+  });
+
+  async function loadSingleBook() {
+    const container = document.getElementById('singleBookContainer');
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    if (!id) {
+      container.innerHTML = '<p>No book selected. <a href="books.html">Go back to Browse</a></p>';
+      return;
+    }
+
+    try {
+      const query = `*[_type == "book" && _id == "${id}"][0]{ 
+        _id, 
+        title, 
+        price, 
+        "imageUrl": image.asset->url, 
+        "authorName": author->name, 
+        category, 
+        description 
+      }`;
+      const sanityBook = await client.fetch(query);
+
+      if (!sanityBook) {
+        container.innerHTML = '<p>Book not found. <a href="books.html">Go back to Browse</a></p>';
+        return;
+      }
+
+      // Format book property to match our script
+      const book = {
+        id: sanityBook._id,
+        _id: sanityBook._id,
+        title: sanityBook.title,
+        authorName: sanityBook.authorName || "Unknown",
+        category: sanityBook.category ? sanityBook.category.toLowerCase() : "fiction",
+        price: sanityBook.price || 0,
+        imageUrl: sanityBook.imageUrl,
+        description: sanityBook.description || "No description available.",
+        stock: "in stock" // Assume in stock for simplicity
+      };
+
+      // Push to global window.books so the 'addToCart' function in script.js can find it!
+      window.books.push(book);
+
+      document.title = `${book.title} | Book Lounge`;
+
+      container.innerHTML = `
+        <div class="detail-grid">
+          <div class="detail-image">
+            <img src="${book.imageUrl || 'images/default-book.jpg'}" alt="${book.title}" />
+          </div>
+
+          <div class="detail-info">
+            <span class="detail-category">${book.category || 'N/A'}</span>
+            <h2 class="detail-title">${book.title}</h2>
+            <p class="detail-author">by ${book.authorName}</p>
+            <p class="detail-price">R${book.price}</p>
+            <p class="detail-description">${book.description}</p>
+
+            <div class="detail-stock in">
+              <i class="fas fa-check-circle"></i> ${book.stock}
+            </div>
+
+            <button class="detail-btn add-to-cart" data-id="${book._id}">
+              <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      `;
+
+    } catch (error) {
+      console.error("Error fetching book:", error);
+      container.innerHTML = '<p>Error loading book details.</p>';
+    }
+  }
+
+  loadSingleBook();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Book | Book Lounge</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Use CDN for Sanity client in the browser to fetch authors -->
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@sanity/client';
+    window.sanityClient = createClient;
+  </script>
+</head>
+
+<body data-page="add-book">
+
+<header class="site-header">
+  <div class="container nav">
+    <h1 class="logo">Book Lounge</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding: 40px 20px; max-width: 600px; margin: 0 auto;">
+  <h2>Add a New Book to the Store</h2>
+  <div id="messageBox" style="display: none; padding: 10px; margin-bottom: 20px; border-radius: 4px;"></div>
+
+  <form id="addBookForm">
+    <div style="margin-bottom: 15px;">
+      <label for="title" style="display: block; margin-bottom: 5px;">Book Title</label>
+      <input type="text" id="title" name="title" required style="width: 100%; padding: 8px; border: 1px solid #ccc;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="author" style="display: block; margin-bottom: 5px;">Author</label>
+      <!-- Dropdown array populated dynamically -->
+      <select id="author" name="author" required style="width: 100%; padding: 8px; border: 1px solid #ccc;">
+        <option value="">-- Select Author --</option>
+      </select>
+      <small style="color: #666;">Loading authors from Sanity...</small>
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="category" style="display: block; margin-bottom: 5px;">Category</label>
+      <input type="text" id="category" name="category" required style="width: 100%; padding: 8px; border: 1px solid #ccc;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label for="price" style="display: block; margin-bottom: 5px;">Price (R)</label>
+      <input type="number" id="price" name="price" step="0.01" required style="width: 100%; padding: 8px; border: 1px solid #ccc;">
+    </div>
+
+    <button type="submit" class="btn" style="width: 100%; padding: 10px; font-size: 1.1rem;">Add Book</button>
+  </form>
+</main>
+
+<script>
+  // Setup Sanity to fetch authors (read-only, perfectly safe on frontend!)
+  async function loadAuthors() {
+    try {
+      // Create local client just for reading the authors dropdown
+      const client = window.sanityClient({
+        projectId: 'denvgz3m',
+        dataset: 'production',
+        useCdn: true,
+        apiVersion: '2024-03-23'
+      });
+
+      // Fetch all authors from Sanity
+      const authors = await client.fetch('*[_type == "author"]{_id, name}');
+      const authorSelect = document.getElementById('author');
+
+      // Populate dropdown
+      authors.forEach(author => {
+        const option = document.createElement('option');
+        option.value = author._id; // We need the ID to make the reference on the backend!
+        option.textContent = author.name;
+        authorSelect.appendChild(option);
+      });
+      document.querySelector('small').textContent = 'Authors loaded!';
+    } catch (error) {
+      console.error("Error loading authors:", error);
+      document.querySelector('small').textContent = 'Failed to load authors.';
+      document.querySelector('small').style.color = 'red';
+    }
+  }
+
+  // Handle Form Submission
+  document.getElementById('addBookForm').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Prevent page reload
+
+    const messageBox = document.getElementById('messageBox');
+    const submitButton = this.querySelector('button[type="submit"]');
+
+    // Collect values
+    const newBook = {
+      title: document.getElementById('title').value,
+      author: document.getElementById('author').value, // This is the Sanity Author ID now!
+      category: document.getElementById('category').value,
+      price: document.getElementById('price').value
+    };
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Adding...";
+
+    try {
+      // POST the data to our Express Backend
+      const response = await fetch('http://localhost:5000/add-book', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newBook)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Show success
+        messageBox.style.display = 'block';
+        messageBox.style.backgroundColor = '#d4edda';
+        messageBox.style.color = '#155724';
+        messageBox.style.border = '1px solid #c3e6cb';
+        messageBox.textContent = `Success! Book added.`;
+        this.reset(); // clear form
+      } else {
+        // Show server-side validation error
+        throw new Error(data.error || 'Failed to add book');
+      }
+    } catch (error) {
+      // Show connection/fetch error
+      messageBox.style.display = 'block';
+      messageBox.style.backgroundColor = '#f8d7da';
+      messageBox.style.color = '#721c24';
+      messageBox.style.border = '1px solid #f5c6cb';
+      messageBox.textContent = `Error: ${error.message}. Is the backend running?`;
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Add Book";
+    }
+  });
+
+  // Call loadAuthors when the script loads
+  // Need to wait slightly for module window.sanityClient to attach
+  setTimeout(loadAuthors, 500); 
+</script>
+
+</body>
+</html>

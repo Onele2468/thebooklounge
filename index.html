@@ -1,267 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Book Lounge | Independent Bookstore Cape Town</title>
-    <meta name="description"
-        content="Welcome to The Book Lounge, an independent bookstore in Cape Town. Discover a curated selection of books, attend regular events, and find your next favorite read.">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="https://kit.fontawesome.com/ac35ccda32.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Lounge Independent Store | Home</title>
+  <link rel="icon" href="images/Logo.jpg" type="image/png"/>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/ac35ccda32.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">THE BOOK LOUNGE</a>
-                <div class="menu-toggle" style="display: none;">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Books</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li class="cart-icon-wrapper">
-                        <a href="cart.html">Cart</a>
-                        <span class="cart-count">0</span>
-                    </li>
-                </ul>
-            </nav>
+<body data-page="home">
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container nav">
+
+    <h1 class="logo">The Book Lounge</h1>
+
+    <!-- TOGGLE -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="cart.html">Order (<span id="cartCount">0</span>)</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container hero-content">
+
+    <div class="hero-text">
+      <h2>Discover Your Next Favorite Book</h2>
+      <p>
+        Explore fiction, non-fiction, educational and children's books —
+        carefully curated for every reader.
+      </p>
+
+      <div style="margin-top:20px;">
+        <a href="books.html" class="btn">Browse Books</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="images/banner.jpg" alt="Book store banner">
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="features container">
+
+  <h2 class="section-title">Why Book Lounge?</h2>
+
+  <div class="grid-3">
+
+    <div class="card">
+      <i class="fas fa-book-open" style="font-size:28px; margin-bottom:10px;"></i>
+      <h3>Wide Selection</h3>
+      <p>Thousands of titles across all genres.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-shopping-cart" style="font-size:28px; margin-bottom:10px;"></i>
+      <h3>Easy Ordering</h3>
+      <p>Simple cart system and smooth checkout.</p>
+    </div>
+
+    <div class="card">
+      <i class="fas fa-headset" style="font-size:28px; margin-bottom:10px;"></i>
+      <h3>Support</h3>
+      <p>We’re here to help you find the perfect book.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+<section class="categories-preview">
+
+  <div class="container">
+    <h2 class="section-title">Shop by Category</h2>
+
+    <div class="grid-4">
+
+      <a href="fiction.html" class="card">Fiction</a>
+      <a href="non-fiction.html" class="card">Non-Fiction</a>
+      <a href="educational.html" class="card">Educational</a>
+      <a href="children.html" class="card">Children</a>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= NEW ARRIVALS ================= -->
+<section class="new-arrivals container">
+
+  <div class="new-arrivals-header" style="display:flex; justify-content:space-between; align-items:center;">
+    <h2 class="section-title" style="margin:0;">New Arrivals</h2>
+    <a href="books.html" class="view-all" style="text-decoration:none; font-weight:bold; color:#6f4e37;">View All →</a>
+  </div>
+
+  <div class="books-grid" id="newArrivalsGrid">
+    <!-- Books will be dynamically injected here from Sanity via script.js -->
+  </div>
+
+</section>
+
+<!-- ================= EVENTS ================= -->
+<section class="events-preview container">
+
+  <h2 class="section-title">Upcoming Events</h2>
+
+  <div class="grid-3">
+
+    <div class="card">
+      <span class="event-date"><i class="fas fa-calendar"></i> April 12, 2026</span>
+      <h3>Book Reading Session</h3>
+      <p>Join our afternoon reading & discussion session with fellow book lovers.</p>
+    </div>
+
+    <div class="card">
+      <span class="event-date"><i class="fas fa-calendar"></i> April 19, 2026</span>
+      <h3>Children's Story Hour</h3>
+      <p>Interactive storytelling for children filled with imagination & fun.</p>
+    </div>
+
+    <div class="card">
+      <span class="event-date"><i class="fas fa-calendar"></i> April 26, 2026</span>
+      <h3>Author Meet & Greet</h3>
+      <p>Meet featured authors, ask questions, and get your books signed.</p>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; margin-top:25px;">
+    <a href="upcoming-events.html" class="btn">View All Events</a>
+  </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta-section">
+  <h2>Start Your Reading Journey Today</h2>
+  <p>Browse our collection and find something amazing.</p>
+  <a href="books.html" class="btn">Explore Books</a>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <h4><img src="images/Logo.jpg" alt="logo"></h4>
+        <p>Your trusted independent bookstore.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="cart.html">Order</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>71 Roeland Street<br>Cape Town</p>
+      </div>
+
+      <div class="footer-col">
+          <h4><i class="fas fa-share-alt"></i> Follow Us</h4>
+          <div class="social-links">
+            <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/+27711049647?text=Hi There Booklounge, I'm interested in your books and I would like to know more!" target="_blank" title="WhatsApp" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
-    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="section hero"
-            style="margin-top:55px; text-align: center; background: linear-gradient(rgba(26,26,26,0.05), rgba(26,26,26,0.05)), url('images/hero-bg.jpg') center/cover;">
-            <div class="container reveal"
-                style="background: #f9f9f9; padding: 30px; backdrop-filter: blur(20px); border-radius: 50px 0 50px 0;">
-                <h1 style="font-size: 4rem; margin-bottom: 20px;">For the Love of Books</h1>
-                <p style="font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto 40px;">An
-                    independent bookstore in the heart of Cape Town, dedicated to bringing you the best in local and
-                    international literature.</p>
-                <a href="products.html" class="btn">Explore Our Collection</a>
-            </div>
-        </section>
+    </div>
 
-        <!-- Featured Categories -->
-        <section class="section" style="background: #fff;">
-            <div class="container">
-                <h2 class="reveal" style="margin-bottom: 40px;">Featured Curations</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                    <div class="reveal"
-                        style="background: var(--secondary-color); padding: 20px; border: 1px solid var(--border-color);">
-                        <h3>New Local Books</h3>
-                        <p style="color: var(--text-light); margin-bottom: 15px;">Celebrating the best of South African
-                            writing.</p>
-                        <a href="products.html?category=local"
-                            style="font-weight: 600; color: var(--accent-color);">Browse Local →</a>
-                    </div>
-                    <div class="reveal"
-                        style="background: var(--secondary-color); padding: 20px; border: 1px solid var(--border-color);">
-                        <h3>Staff Recommendations</h3>
-                        <p style="color: var(--text-light); margin-bottom: 15px;">Handpicked favorites from our
-                            passionate team.</p>
-                        <a href="staff-recomendation.html?category=staff"
-                            style="font-weight: 600; color: var(--accent-color);">See
-                            Picks →</a>
-                    </div>
-                    <div class="reveal"
-                        style="background: var(--secondary-color); padding: 20px; border: 1px solid var(--border-color);">
-                        <h3>Upcoming Events</h3>
-                        <p style="color: var(--text-light); margin-bottom: 15px;">Book launches, readings, and literary
-                            discussions.</p>
-                        <a href="about.html#events" style="font-weight: 600; color: var(--accent-color);">Join Us →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Book Lounge</p>
+    </div>
 
-        <!-- New Arrivals Section -->
-        <section class="section">
-            <div class="container">
-                <h2 class="reveal" style="margin-bottom: 40px;">New Arrivals</h2>
-                <div id="book-list-container"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
-                    <!-- Book 1 -->
-                    <div class="reveal" style="text-align: center;">
-                        <div class="book-image-container"
-                            onclick="openPreview('p1', 'images/half-of-a-yellow-sun.jpg', 'Half of a Yellow Sun', 'Chimamanda Nogzi Adichie', 295, 'Winner of the Bailey’s Prize Best of the Best Winner of the 2007 Orange Prize for Fiction `Chimamanda Ngozi Adichie’s masterpiece, winner of the Orange Prize for Fiction, is a novel about Africa in a wider sense:', false)"
-                            style="cursor: pointer;">
-                            <div class="book-image"><img src="images/half-of-a-yellow-sun.jpg"
-                                    alt="Half of a Yellow Sun"></div>
-                        </div>
-                        <h4 style="margin-bottom: 5px;"></h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;"></p>
-                        <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;"></p>
-                        <button class="btn"
-                            onclick="addToCart('p1', 'Half of a Yellow Sun', 'Chimamanda Nigosi Adichie', 295, 'images/half-of-a-yellow-sun.jpg')"
-                            style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
-                    </div>
-                    <!-- Book 2 -->
-                    <div class="reveal out-of-stock" style="text-align: center;">
-                        <div class="book-image-container"
-                            onclick="openPreview('p2', 'images/building-a-new-africa.jpg', 'Building a New Africa', 'Evans E. Woherem', 298, 'In Building a New Africa, the continent’s developmental challenges are confronted head-on, offering a bold and optimistic blueprint for a prosperous future.', true)"
-                            style="cursor: pointer;">
-                            <div class="book-image"><img src="images/building-a-new-africa.jpg"
-                                    alt="building a new africa"></div>
-                        </div>
-                        <h4 style="margin-bottom: 5px;">Building a New Africa</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Evans E. Woherem</p>
-                        <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R298.00</p>
-                        <button class="btn" disabled style="padding: 8px 16px; font-size: 0.8rem;">Out of Stock</button>
-                    </div>
-                    <!-- Book 3 -->
-                    <div class="reveal" style="text-align: center;">
-                        <div class="book-image-container"
-                            onclick="openPreview('p4','images/yearning.jpg', 'The Yearning', 'Mohale Mashigo', 270, 'The Yearning is a memorable exploration of the ripple effects of the past, of personal strength and courage, and of the shadowy intersections of traditional and modern worlds.', false)"
-                            style="cursor: pointer;">
-                            <div class="book-image"><img src="images/yearning.jpg" alt="yearning"></div>
-                        </div>
-                        <h4 style="margin-bottom: 5px;">The Yearning</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Mohale Mashigo</p>
-                        <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R270.00</p>
-                        <button class="btn"
-                            onclick="addToCart('p4', 'The Yearning', 'Mohale Mashigo', 270, 'images/yearning.jpg')"
-                            style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
-                    </div>
-                    <!-- Book 4 -->
-                    <div class="reveal" style="text-align: center;">
-                        <div class="book-image-container"
-                            onclick="openPreview('p5','images/smallest-ones.jpg', 'The Smallest Ones', 'Popina Khumanda', 300, 'Gripping detective work and deep human insight in this local thriller.', false)"
-                            style="cursor: pointer;">
-                            <div class="book-image"><img src="images/smallest-ones.jpg" alt="smallest ones"></div>
-                        </div>
-                        <h4 style="margin-bottom: 5px;">The Smallest Ones</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Deon Meyer</p>
-                        <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R300.00</p>
-                        <button class="btn"
-                            onclick="addToCart('p5', 'The Smallest Ones', 'Popina Khumanda', 300, 'images/smallest-ones.jpg')"
-                            style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
-                    </div>
-                    <!-- Book 5 -->
-                    <div class="reveal" style="text-align: center;">
-                        <div class="book-image-container"
-                            onclick="openPreview('p6','images/welcome-to-the-hyunam-dong-bookshop.jpg', 'Welcome to the Hyunam-dong Bookshop', 'Hwang Bo-reum', 320, 'A heartwarming story about a woman who leaves her high-pressure life to open a bookshop, finding healing and connection through literature.', false)"
-                            style="cursor: pointer;">
-                            <div class="book-image"><img src="images/welcome-to-the-hyunam.jpg"
-                                    alt="welcome to the hyunam-dong bookshop"></div>
-                        </div>
-                        <h4 style="margin-bottom: 5px;">Welcome to the Hyunam</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Hwang Bo-reum</p>
-                        <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R320.00</p>
-                        <button class="btn"
-                            onclick="addToCart('p6', 'Welcome to the Hyunam-dong Bookshop', 'Hwang Bo-reum', 320, 'images/welcome-to-the-hyunam.jpg')"
-                            style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
-                    </div>
-                    <!-- Book 6 -->
-                    <div class="reveal" style="text-align: center;">
-                        <div class="book-image-container"
-                            onclick="openPreview('p7','images/cederberg-the-book.jpg', 'Cederberg - The Book', 'Various Authors', 450, 'A stunning tribute to the Cederberg region, exploring its landscape, history, and the people who call it home.', false)"
-                            style="cursor: pointer;">
-                            <div class="book-image"><img src="images/cederberg-the-book.jpg" alt="cederberg - the book">
-                            </div>
-                        </div>
-                        <h4 style="margin-bottom: 5px;">Cederberg-The Book</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Various Authors</p>
-                        <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R450.00</p>
-                        <button class="btn"
-                            onclick="addToCart('p7', 'Cederberg - The Book', 'Various Authors', 450, 'images/cederberg-the-book.jpg')"
-                            style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
-                    </div>
-                    <!-- Book 7 -->
-                    <div class="reveal" style="text-align: center;">
-                        <div class="book-image-container"
-                            onclick="openPreview('p8','images/land-lines-by-shari-daya.jpg', 'Land Lines', 'Shari Daya', 280, 'A poignant collection of essays on heritage, place, and identity in South Africa.', false)"
-                            style="cursor: pointer;">
-                            <div class="book-image"><img src="images/land-lines-by-shari-daya.jpg" alt="land lines">
-                            </div>
-                        </div>
-                        <h4 style="margin-bottom: 5px;">Land Lines</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Shari Daya</p>
-                        <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R280.00</p>
-                        <button class="btn"
-                            onclick="addToCart('p8', 'Land Lines', 'Shari Daya', 280, 'images/land-lines-by-shari-daya.jpg')"
-                            style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
-                    </div>
-                    <!-- Book 8 -->
-                    <div class="reveal" style="text-align: center;">
-                        <div class="book-image-container"
-                            onclick="openPreview('p9', 'images/misinterpretation.jpg', 'SA Indigenous Garden Plants', 'Various', 350, 'A comprehensive guide to the beautiful and diverse flora of South Africa.', false)"
-                            style="cursor: pointer;">
-                            <div class="book-image"><img src="images/misinterpretation.jpg"
-                                    alt="sa indigenous garden plants"></div>
-                        </div>
-                        <h4 style="margin-bottom: 5px;">SA Indigenous Garden</h4>
-                        <p style="color: var(--text-light); font-size: 0.9rem;">Various</p>
-                        <p style="font-weight: 700; color: var(--accent-color); margin: 10px 0;">R350.00</p>
-                        <button class="btn"
-                            onclick="addToCart('p9', 'SA Indigenous Garden Plants', 'Various', 350, 'images/misinterpretation.jpg')"
-                            style="padding: 8px 16px; font-size: 0.8rem;">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+  </div>
+</footer>
 
-        <!-- Newsletter -->
-        <section class="section" style="background: var(--primary-color); color: var(--secondary-color);">
-            <div class="container reveal" style="text-align: center;">
-                <h2 style="color: #fff; margin-bottom: 20px;">Stay in the Loop</h2>
-                <p style="margin-bottom: 30px; opacity: 0.8;">Subscribe to our newsletter for event updates and new
-                    arrivals.</p>
-                <form id="newsletter-form" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto;">
-                    <input type="email" placeholder="Your email address"
-                        style="flex: 1; padding: 12px; border: none; border-radius: 4px;" required>
-                    <button type="submit" class="btn">Subscribe</button>
-                </form>
-            </div>
-        </section>
-    </main>
+<script src="js/books.js"></script>
+<script src="js/script.js"></script>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4><img src="images/Logo.jpg" alt="logo"></h4>
-
-                </div>
-                <div class="footer-col">
-                    <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
-                    <ul>
-                        <p>71 Roeland Street<br>Corner of Roeland and Buitenkant<br>Cape Town</p>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4><i class="fas fa-clock"></i>Hours</h4>
-                    <p>Mon - Fri: 09h00 - 18h00</p>
-                    <p>Sat: 09h00 - 16h00</p>
-                    <p>Sun: 10h00 - 16h00</p>
-                </div>
-
-                <div class="footer-col">
-                    <h4><i class="fas fa-share-alt"></i>Follow Us</h4>
-                    <div style="display: flex; gap: 15px;">
-                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook"
-                            rel="noopener noreferrer"><i class="fab fa-facebook"></i></a> /
-                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram"
-                            rel="noopener noreferrer"><i class="fab fa-instagram"></i></a> /
-                        <a href="https://wa.me/+27711049647?text=Hi There%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20I%20would%20like%20to%20know%20more!"
-                            target="_blank" title="Whatsapp" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a> /
-                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter"
-                            rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2026 The Book Lounge. All rights reserved. <a href="policy-privacy.html">Privacy Policy</a>
-            </div>
-        </div>
-    </footer>
-
-    <script type="module" src="js/main.js"></script>
 </body>
-
 </html>

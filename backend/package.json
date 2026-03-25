@@ -1,0 +1,20 @@
+{
+  "name": "book-store-backend",
+  "version": "1.0.0",
+  "description": "Backend for Book Lounge to add books to Sanity",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@sanity/client": "^6.29.1",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
