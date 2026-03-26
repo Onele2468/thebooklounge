@@ -500,6 +500,41 @@ img {
   margin-bottom: 24px;
   color: rgba(255,255,255,0.85);
 }
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+.community-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+  text-align: left;
+  overflow: hidden;
+  grid-template-columns: 1.5fr 1fr;
+  transition: all 0.3s ease;
+
+}
+.event-card{
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+  text-align: left;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: grid;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.events-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
 
 /* ===================================================
    CART PAGE STYLES
@@ -981,6 +1016,7 @@ img {
   padding: 18px 0;
   margin-top: 40px;
 }
+
 
 .cart-section {
   padding: 40px 0;
